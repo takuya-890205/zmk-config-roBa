@@ -14,7 +14,7 @@ layers:
   - A
   - S
   - D
-  - F
+  - {t: F, h: FUNCTION}
   - G
   - Sft+Gui+S
   - '-'
@@ -30,7 +30,7 @@ layers:
   - B
   - ':'
   - ;
-  - N
+  - {t: N, h: NUM}
   - M
   - ','
   - .
@@ -50,19 +50,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F13
-  - F6
   - F7
   - F8
   - F9
@@ -70,14 +58,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - F4
+  - F5
+  - F6
   - F11
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -86,8 +74,20 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
   - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F13
   NUM:
   - '-'
   - KP 7
@@ -118,7 +118,7 @@ layers:
   - .
   - '='
   - {t: ▽, type: trans}
-  - '['
+  - {t: '[', type: held}
   - ']'
   - '{'
   - '}'
@@ -127,7 +127,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
