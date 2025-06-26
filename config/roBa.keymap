@@ -66,19 +66,10 @@
 &kp Q             &kp W         &kp E         &kp R                        &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F                        &kp G        &kp ESCAPE                       &trans         &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp TAB                          &kp DEL        &kp N        &kp M  &kp COMMA  &kp DOT  &kp RIGHT_SHIFT
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 5 LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 3 LANGUAGE_1      &kp BACKSPACE  &lt 1 ENTER                             &kp RCTRL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 2 LANGUAGE_2  &lt 1 SPACE  &lt_to_layer_0 4 LANGUAGE_1      &kp BACKSPACE  &lt 3 ENTER                             &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
-        };
-
-        Arrow {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans    &trans    &kp UP    &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                   &trans
-            >;
         };
 
         Num {
@@ -87,6 +78,24 @@
 &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        Symbol {
+            bindings = <
+&trans  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)                             &trans             &kp MINUS  &kp LS(MINUS)  &trans              &trans
+&trans  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)  &kp LS(NUMBER_6)  &trans            &trans      &kp GRAVE      &kp LS(GRAVE)      &kp EQUAL  &kp LS(EQUAL)  &kp LEFT_BRACE      &kp RIGHT_BRACE
+&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &trans            &trans      &kp BACKSLASH  &kp LS(BACKSLASH)  &kp APOS   &kp LS(APOS)   &kp LS(LEFT_BRACE)  &kp LS(RIGHT_BRACE)
+&trans  &trans            &trans            &trans            &trans            &trans      &trans         &trans                                                           &trans
+            >;
+        };
+
+        Control {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans    &trans    &kp UP    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                   &trans
             >;
         };
 
@@ -104,27 +113,18 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &mo 6
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &tog 5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
-            >;
-        };
-
-        Symbol {
-            bindings = <
-&trans  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)                             &trans             &kp MINUS  &kp LS(MINUS)  &trans              &trans
-&trans  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)  &kp LS(NUMBER_6)  &trans            &trans      &kp GRAVE      &kp LS(GRAVE)      &kp EQUAL  &kp LS(EQUAL)  &kp LEFT_BRACE      &kp RIGHT_BRACE
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &trans            &trans      &kp BACKSLASH  &kp LS(BACKSLASH)  &kp APOS   &kp LS(APOS)   &kp LS(LEFT_BRACE)  &kp LS(RIGHT_BRACE)
-&trans  &trans            &trans            &trans            &trans            &trans      &trans         &trans                                                           &trans
             >;
         };
 
         Scroll {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
