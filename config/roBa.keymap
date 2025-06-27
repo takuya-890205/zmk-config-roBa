@@ -47,7 +47,7 @@
             key-positions = <19 20>;
         };
 
-        middle {
+        middle_click {
             bindings = <&mkp MB3>;
             key-positions = <19 20 18>;
         };
