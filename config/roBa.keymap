@@ -7,6 +7,7 @@
     flavor = "tap-preferred";
     tapping-term-ms = <300>;
     quick-tap-ms = <0>;
+    permissive-hold = <false>;
 };
 
 / {
