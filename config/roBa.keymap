@@ -75,7 +75,7 @@
 
         lt: lt {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP";
+            label = "AAAA";
             bindings = <&mo>, <&kp>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
