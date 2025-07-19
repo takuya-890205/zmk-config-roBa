@@ -72,15 +72,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
-        lt: lt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AAAA";
-            bindings = <&mo>, <&kp>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            #binding-cells = <2>;
-        };
     };
 
     keymap {
