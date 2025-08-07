@@ -80,12 +80,12 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R                        &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
-&lt 3 A           &kp S         &kp D         &kp F                        &kp G        &kp ESCAPE                       &trans         &kp H        &kp J  &lt 6 K    &kp L    &lt 3 SEMI
+&lt 3 A           &kp S         &kp D         &kp F                        &kp G        &trans                           &kp ESCAPE     &kp H        &kp J  &lt 6 K    &kp L    &lt 3 SEMI
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp TAB                          &kp DEL        &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 1 LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 4 LANGUAGE_1      &kp BACKSPACE  &lt 2 ENTER                             &kp RCTRL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;
         };
 
         Symbol {
@@ -99,10 +99,10 @@
 
         Num_Arrow {
             bindings = <
-&kp LS(NUMBER_8)  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0                      &trans    &trans    &kp UP    &trans     &trans
-&kp LS(EQUAL)     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ENTER     &trans      &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
-&kp MINUS         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DELETE    &trans      &trans  &trans    &trans    &trans    &trans     &trans
-&kp SLASH         &kp PERIOD    &kp EQUAL     &trans        &trans        &trans      &trans  &trans                                   &trans
+&kp LS(NUMBER_8)  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0                       &trans    &trans    &kp UP    &trans     &trans
+&kp LS(EQUAL)     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ENTER      &trans      &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+&kp MINUS         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSPACE  &trans      &trans  &trans    &trans    &trans    &trans     &trans
+&kp SLASH         &kp PERIOD    &kp EQUAL     &trans        &trans         &trans      &trans  &trans                                   &trans
             >;
         };
 
