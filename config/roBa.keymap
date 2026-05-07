@@ -3,10 +3,24 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define DEF 0
+#define SYM 1
+#define NUM 2
+#define CTL 3
+#define FUN 4
+#define MSE 5
+#define SCR 6
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
+    quick-tap-ms = <175>;
+};
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
 };
 
 / {
@@ -58,7 +72,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to DEF &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
     };
@@ -79,6 +93,16 @@
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp TAB>;
         };
+
+        ht_bspc_del: ht_bspc_del {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_BSPC_DEL";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -87,9 +111,9 @@
         default_layer {
             bindings = <
 &td_q_tab         &kp W         &kp E         &kp R                        &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &trans                           &kp ESCAPE     &kp H        &kp J  &lt 6 K    &kp L    &lt 3 SEMI
+&kp A             &kp S         &kp D         &kp F                        &kp G        &trans                           &kp ESCAPE     &kp H        &kp J  &lt SCR K  &kp L    &lt CTL SEMI
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp TAB                          &kp DEL        &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH
-&mt LCTRL ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 1 LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 4 LANGUAGE_1      &kp BACKSPACE  &lt 2 ENTER                             &kp RCTRL
+&mt LCTRL ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 SYM LANGUAGE_2  &lt NUM SPACE  &lt_to_layer_0 FUN LANGUAGE_1      &kp BACKSPACE  &lt NUM ENTER                             &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;
@@ -107,8 +131,8 @@
         Num_Arrow {
             bindings = <
 &kp LS(NUMBER_8)  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0                           &trans    &trans    &kp UP    &trans     &trans
-&kp LS(EQUAL)     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BACKSPACE  &trans          &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
-&kp MINUS         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER      &kp DELETE      &trans  &trans    &trans    &trans    &trans     &trans
+&kp LS(EQUAL)     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &ht_bspc_del DEL BSPC  &trans          &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+&kp MINUS         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER              &kp DELETE      &trans  &trans    &trans    &trans    &trans     &trans
 &kp SLASH         &kp EQUAL     &kp PERIOD    &trans        &trans         &trans          &trans  &trans                                   &trans
             >;
         };
@@ -136,7 +160,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mo 6   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mo SCR  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
